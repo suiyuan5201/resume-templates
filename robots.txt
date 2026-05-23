@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://resume-templates-free.netlify.app/sitemap.xml
+Sitemap: https://unique-chebakia-13e66c.netlify.app/sitemap.xml
