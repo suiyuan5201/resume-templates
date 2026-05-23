@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>简历模板下载 - 精美简历模板免费预览/在线编辑 | 求职必备</title>
+<meta name="description" content="精选50+精美简历模板，支持在线预览编辑，涵盖互联网、金融、教育、设计等行业，应届生/职场人求职必备，下载即用。">
+<meta name="keywords" content="简历模板,简历下载,简历模板免费,求职简历,简历设计,应届生简历,工作简历,简历格式,resume template">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2030154790924322" crossorigin="anonymous"></script>
+<style>
+:root{--primary:#6366f1;--primary-dark:#4f46e5;--bg:#f8fafc;--text:#1e293b;--text-light:#64748b;--border:#e2e8f0;--card-bg:#fff;--shadow:0 2px 12px rgba(0,0,0,.06)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+a{text-decoration:none;color:inherit}
+.navbar{background:var(--card-bg);border-bottom:1px solid var(--border);padding:12px 24px;display:flex;align-items:center;gap:15px;position:sticky;top:0;z-index:100;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.logo{font-weight:700;font-size:1.2em;color:var(--primary)}
+.nav-links{display:flex;gap:15px;margin-left:auto}
+.nav-links a{font-size:13px;color:var(--text-light);cursor:pointer;transition:color .2s}
+.nav-links a:hover{color:var(--primary)}
+.hero{text-align:center;padding:50px 20px 35px;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff;margin-bottom:30px}
+.hero h1{font-size:2.2em;margin-bottom:10px}
+.hero p{font-size:15px;opacity:.9;max-width:550px;margin:0 auto}
+.hero-stats{display:flex;gap:30px;justify-content:center;margin-top:18px;flex-wrap:wrap}
+.hero-stat{text-align:center}
+.hero-stat .num{font-size:1.8em;font-weight:700}
+.hero-stat .label{font-size:12px;opacity:.8}
+.container{max-width:1100px;margin:0 auto;padding:0 20px 50px}
+
+/* 分类标签 */
+.cat-tabs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:25px}
+.cat-tab{padding:8px 18px;border-radius:20px;border:1px solid var(--border);font-size:13px;cursor:pointer;transition:all .2s;background:var(--card-bg)}
+.cat-tab:hover,.cat-tab.active{background:var(--primary);color:#fff;border-color:var(--primary)}
+
+/* 模板网格 */
+.templates-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
+.template-card{background:var(--card-bg);border-radius:14px;border:1px solid var(--border);overflow:hidden;transition:all .3s;cursor:pointer;box-shadow:var(--shadow)}
+.template-card:hover{transform:translateY(-4px);box-shadow:0 8px 25px rgba(0,0,0,.12);border-color:var(--primary)}
+.template-preview{width:100%;aspect-ratio:210/297;overflow:hidden;position:relative;background:#f9fafb}
+.template-preview canvas{width:100%;height:100%}
+.template-preview .badge{position:absolute;top:10px;right:10px;padding:3px 10px;border-radius:12px;font-size:11px;font-weight:600}
+.badge-free{background:#dcfce7;color:#166534}
+.badge-hot{background:#fee2e2;color:#991b1b}
+.badge-new{background:#dbeafe;color:#1e40af}
+.template-info{padding:14px}
+.template-info h3{font-size:14px;margin-bottom:4px}
+.template-info p{font-size:12px;color:var(--text-light);margin-bottom:8px}
+.template-info .tags{display:flex;gap:4px;flex-wrap:wrap}
+.template-info .tag{font-size:10px;padding:2px 8px;border-radius:10px;background:#f0f4ff;color:var(--primary)}
+.template-actions{display:flex;gap:8px;padding:0 14px 14px}
+.template-actions button{flex:1;padding:8px;border-radius:8px;font-size:12px;cursor:pointer;transition:all .2s;font-weight:500;border:none}
+.btn-preview{background:#f3f4f6;color:var(--text)}
+.btn-preview:hover{background:#e5e7eb}
+.btn-download{background:var(--primary);color:#fff}
+.btn-download:hover{background:var(--primary-dark)}
+
+/* 预览弹窗 */
+.preview-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);z-index:9998;align-items:center;justify-content:center}
+.preview-overlay.show{display:flex}
+.preview-modal{background:#fff;border-radius:16px;padding:20px;max-width:500px;width:95%;max-height:90vh;overflow-y:auto;position:relative}
+.preview-modal .close-btn{position:absolute;top:10px;right:14px;font-size:22px;color:#aaa;cursor:pointer;background:none;border:none;z-index:2}
+.preview-modal canvas{width:100%;border:1px solid var(--border);border-radius:8px}
+.preview-modal .actions{display:flex;gap:10px;margin-top:15px}
+.preview-modal .actions button{flex:1;padding:12px;border-radius:10px;font-size:14px;cursor:pointer;font-weight:600;border:none;transition:all .2s}
+
+/* 付费弹窗 */
+.pay-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.55);z-index:9999;align-items:center;justify-content:center}
+.pay-overlay.show{display:flex}
+.pay-modal{background:#fff;border-radius:16px;padding:28px;max-width:420px;width:92%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.3);position:relative;animation:payIn .3s ease}
+@keyframes payIn{from{transform:scale(.85);opacity:0}to{transform:scale(1);opacity:1}}
+.pay-modal .close-btn{position:absolute;top:12px;right:16px;font-size:22px;color:#aaa;cursor:pointer;background:none;border:none}
+.pay-modal h2{font-size:1.2em;margin-bottom:6px}
+.pay-modal .price-tag{font-size:2.2em;font-weight:800;color:#ef4444;margin:8px 0 4px}
+.pay-modal .price-tag small{font-size:.45em;color:#999;font-weight:400;text-decoration:line-through;margin-left:6px}
+.pay-modal .price-note{font-size:12px;color:var(--text-light);margin-bottom:12px}
+.pay-modal .benefits{display:flex;justify-content:center;gap:12px;margin:8px 0;font-size:11px;color:var(--text-light)}
+.pay-modal .qr-area{background:#f9fafb;border-radius:12px;padding:14px;margin-bottom:12px;border:1px solid #e2e8f0;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.pay-modal .qr-area>div{text-align:center}
+.pay-modal .qr-area img{width:140px;height:140px;border-radius:8px;object-fit:contain;border:1px solid #e2e8f0}
+.pay-modal .qr-area p{margin-top:4px;font-size:11px;font-weight:600}
+.pay-modal .contact-info{background:#f0f9ff;border:1px solid #bae6fd;border-radius:10px;padding:10px;margin:10px 0;font-size:12px;color:#1e40af;text-align:left}
+.pay-modal .contact-info p{margin:3px 0}
+.pay-modal .code-input-row{display:flex;gap:8px;margin-bottom:10px}
+.pay-modal .code-input-row input{flex:1;padding:10px 14px;border:2px solid #e2e8f0;border-radius:10px;font-size:14px;outline:none;text-align:center;letter-spacing:2px}
+.pay-modal .code-input-row input:focus{border-color:var(--primary)}
+.pay-modal .code-input-row button{padding:10px 18px;background:var(--primary);color:#fff;border:none;border-radius:10px;font-size:14px;cursor:pointer;font-weight:600;white-space:nowrap}
+.pay-modal .code-err{color:#ef4444;font-size:12px;margin:-4px 0 8px;display:none}
+
+.ad-placeholder{background:#f9fafb;border:2px dashed var(--border);border-radius:12px;padding:20px;text-align:center;color:var(--text-light);font-size:13px;margin:25px auto;max-width:728px}
+.footer{text-align:center;padding:30px;color:var(--text-light);font-size:13px;border-top:1px solid var(--border);margin-top:40px}
+.toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:#1e293b;color:#fff;padding:10px 24px;border-radius:20px;font-size:14px;z-index:99999;opacity:0;transition:opacity .3s;pointer-events:none}
+.toast.show{opacity:1}
+@media(max-width:768px){.hero h1{font-size:1.6em}.templates-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.templates-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav class="navbar">
+  <a href="index.html" class="logo">📄 简历模板站</a>
+  <div class="nav-links">
+    <a onclick="filterCat('all')">全部模板</a>
+    <a onclick="filterCat('fresh')">应届生</a>
+    <a onclick="filterCat('it')">互联网</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <h1>📄 精选简历模板</h1>
+  <p>50+精美简历模板，在线预览，下载即用，助你拿到心仪offer</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="num">50+</div><div class="label">精选模板</div></div>
+    <div class="hero-stat"><div class="num">8</div><div class="label">行业分类</div></div>
+    <div class="hero-stat"><div class="num">免费</div><div class="label">在线预览</div></div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="cat-tabs" id="catTabs">
+    <span class="cat-tab active" onclick="filterCat('all')">🌟 全部</span>
+    <span class="cat-tab" onclick="filterCat('fresh')">🎓 应届生</span>
+    <span class="cat-tab" onclick="filterCat('it')">💻 互联网</span>
+    <span class="cat-tab" onclick="filterCat('finance')">💰 金融</span>
+    <span class="cat-tab" onclick="filterCat('design')">🎨 设计</span>
+    <span class="cat-tab" onclick="filterCat('edu')">📚 教育</span>
+    <span class="cat-tab" onclick="filterCat('sales')">📈 市场营销</span>
+    <span class="cat-tab" onclick="filterCat('medical')">🏥 医疗</span>
+    <span class="cat-tab" onclick="filterCat('simple')">📝 简约通用</span>
+  </div>
+
+  <div class="templates-grid" id="templatesGrid"></div>
+
+  <div class="ad-placeholder">广告位 - Google AdSense</div>
+</div>
+
+<footer class="footer">
+  简历模板站 © 2024 | 精选简历模板，助力求职成功<br>
+  <span style="font-size:11px;margin-top:5px;display:block;opacity:.7">模板仅供个人求职使用</span>
+</footer>
+
+<!-- 预览弹窗 -->
+<div class="preview-overlay" id="previewOverlay">
+  <div class="preview-modal">
+    <button class="close-btn" onclick="closePreview()">&times;</button>
+    <canvas id="previewCanvas" width="630" height="891"></canvas>
+    <div class="actions">
+      <button class="btn-preview" onclick="closePreview()">关闭预览</button>
+      <button class="btn-download" onclick="downloadTemplate()">⬇️ 下载模板</button>
+    </div>
+  </div>
+</div>
+
+<!-- 付费弹窗 -->
+<div class="pay-overlay" id="payOverlay">
+  <div class="pay-modal">
+    <button class="close-btn" onclick="closePayModal()">&times;</button>
+    <h2>下载精美简历模板</h2>
+    <div class="price-tag">¥3.9<small>原价¥9.9</small></div>
+    <p class="price-note">一次付费，所有模板永久免费下载</p>
+    <div class="benefits">
+      <span>✅ 50+模板</span><span>✅ 高清无水印</span><span>✅ 永久有效</span>
+    </div>
+    <div class="qr-area">
+      <div>
+        <img src="img/wechat-pay.jpg" alt="微信支付">
+        <p style="color:#07c160">💚 微信支付</p>
+      </div>
+      <div>
+        <img src="img/alipay.jpg" alt="支付宝支付">
+        <p style="color:#1677ff">💙 支付宝支付</p>
+      </div>
+    </div>
+    <div class="contact-info">
+      <p style="font-weight:700;margin-bottom:4px">📞 付款后联系方式（任选一种）：</p>
+      <p>💬 微信号：<strong style="user-select:all">suiyuan5201</strong>（推荐，回复快）</p>
+      <p>🐧 QQ号：<strong style="user-select:all">289419604</strong></p>
+      <p style="font-size:11px;color:#64748b;margin-top:4px">付款后发截图，立即发取件码，秒回！</p>
+    </div>
+    <div class="code-input-row">
+      <input type="text" id="unlockCode" placeholder="输入取件码" maxlength="10" onkeyup="if(event.key==='Enter')unlockDownload()">
+      <button onclick="unlockDownload()">解锁下载</button>
+    </div>
+    <p class="code-err" id="codeErr">❌ 取件码错误，请检查后重试</p>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const UNLOCK_CODES = ['RESUME39','VIP2024','JIANLI','CV2024'];
+
+// 简历模板数据
+const TEMPLATES = [
+  {id:1,name:'清新蓝简约',cat:'simple',badge:'hot',color:'#3b82f6',accent:'#dbeafe',tags:['简约','通用','推荐']},
+  {id:2,name:'经典黑白',cat:'simple',badge:'',color:'#1e293b',accent:'#f1f5f9',tags:['经典','正式','通用']},
+  {id:3,name:'活力橙',cat:'fresh',badge:'hot',color:'#f97316',accent:'#fff7ed',tags:['应届生','活力','创意']},
+  {id:4,name:'优雅紫',cat:'design',badge:'new',color:'#8b5cf6',accent:'#f5f3ff',tags:['设计','创意','时尚']},
+  {id:5,name:'稳重深蓝',cat:'finance',badge:'',color:'#1e40af',accent:'#eff6ff',tags:['金融','商务','稳重']},
+  {id:6,name:'清新绿',cat:'edu',badge:'',color:'#16a34a',accent:'#f0fdf4',tags:['教育','清新','温和']},
+  {id:7,name:'科技蓝',cat:'it',badge:'hot',color:'#0ea5e9',accent:'#f0f9ff',tags:['互联网','技术','简洁']},
+  {id:8,name:'商务灰',cat:'finance',badge:'',color:'#475569',accent:'#f8fafc',tags:['商务','正式','金融']},
+  {id:9,name:'创意红',cat:'design',badge:'',color:'#ef4444',accent:'#fef2f2',tags:['设计','大胆','创意']},
+  {id:10,name:'温馨粉',cat:'fresh',badge:'new',color:'#ec4899',accent:'#fdf2f8',tags:['应届生','温馨','可爱']},
+  {id:11,name:'营销达人',cat:'sales',badge:'',color:'#f59e0b',accent:'#fffbeb',tags:['营销','市场','热情']},
+  {id:12,name:'医疗专业',cat:'medical',badge:'',color:'#14b8a6',accent:'#f0fdfa',tags:['医疗','专业','严谨']},
+  {id:13,name:'极简主义',cat:'simple',badge:'hot',color:'#64748b',accent:'#f8fafc',tags:['极简','高级','通用']},
+  {id:14,name:'前端工程师',cat:'it',badge:'',color:'#6366f1',accent:'#eef2ff',tags:['前端','技术','项目']},
+  {id:15,name:'产品经理',cat:'it',badge:'',color:'#0891b2',accent:'#ecfeff',tags:['产品','互联网','数据']},
+  {id:16,name:'UI设计师',cat:'design',badge:'new',color:'#d946ef',accent:'#fdf4ff',tags:['UI','设计','作品集']},
+  {id:17,name:'应届毕业生',cat:'fresh',badge:'',color:'#2563eb',accent:'#eff6ff',tags:['应届','校招','实习']},
+  {id:18,name:'会计师',cat:'finance',badge:'',color:'#059669',accent:'#ecfdf5',tags:['会计','财务','专业']},
+  {id:19,name:'教师简历',cat:'edu',badge:'',color:'#7c3aed',accent:'#f5f3ff',tags:['教师','教育','耐心']},
+  {id:20,name:'销售精英',cat:'sales',badge:'',color:'#dc2626',accent:'#fef2f2',tags:['销售','业绩','沟通']},
+  {id:21,name:'护士简历',cat:'medical',badge:'',color:'#0d9488',accent:'#f0fdfa',tags:['护士','医疗','关怀']},
+  {id:22,name:'双栏简约',cat:'simple',badge:'',color:'#334155',accent:'#f1f5f9',tags:['双栏','简约','清晰']},
+  {id:23,name:'Java开发',cat:'it',badge:'',color:'#ea580c',accent:'#fff7ed',tags:['Java','后端','架构']},
+  {id:24,name:'数据分析',cat:'it',badge:'new',color:'#4f46e5',accent:'#eef2ff',tags:['数据','分析','Python']},
+  {id:25,name:'研究生',cat:'fresh',badge:'',color:'#0369a1',accent:'#f0f9ff',tags:['研究生','学术','科研']},
+  {id:26,name:'平面设计',cat:'design',badge:'',color:'#be185d',accent:'#fdf2f8',tags:['平面','设计','视觉']},
+  {id:27,name:'银行职员',cat:'finance',badge:'',color:'#1d4ed8',accent:'#eff6ff',tags:['银行','金融','严谨']},
+  {id:28,name:'幼师简历',cat:'edu',badge:'',color:'#f472b6',accent:'#fdf2f8',tags:['幼师','可爱','温馨']},
+  {id:29,name:'市场总监',cat:'sales',badge:'',color:'#b91c1c',accent:'#fef2f2',tags:['总监','管理','战略']},
+  {id:30,name:'药剂师',cat:'medical',badge:'',color:'#065f46',accent:'#ecfdf5',tags:['药剂','医药','专业']},
+];
+
+let currentCat = 'all';
+let currentTemplateId = null;
+
+// 渲染模板列表
+function renderTemplates() {
+  const list = currentCat === 'all' ? TEMPLATES : TEMPLATES.filter(t => t.cat === currentCat);
+  const grid = document.getElementById('templatesGrid');
+  grid.innerHTML = list.map(t => `
+    <div class="template-card" onclick="previewTemplate(${t.id})">
+      <div class="template-preview">
+        <canvas id="thumb_${t.id}" width="210" height="297"></canvas>
+        ${t.badge ? `<span class="badge badge-${t.badge}">${t.badge==='hot'?'🔥热门':t.badge==='new'?'✨新':'免费'}</span>` : ''}
+      </div>
+      <div class="template-info">
+        <h3>${t.name}</h3>
+        <p>专业简历模板，适合${t.tags.join('、')}相关岗位</p>
+        <div class="tags">${t.tags.map(tag=>`<span class="tag">${tag}</span>`).join('')}</div>
+      </div>
+      <div class="template-actions">
+        <button class="btn-preview" onclick="event.stopPropagation();previewTemplate(${t.id})">👁️ 预览</button>
+        <button class="btn-download" onclick="event.stopPropagation();downloadTemplate(${t.id})">⬇️ 下载</button>
+      </div>
+    </div>
+  `).join('');
+  // 绘制缩略图
+  list.forEach(t => drawResumeThumb(document.getElementById('thumb_'+t.id), t));
+}
+
+function filterCat(cat) {
+  currentCat = cat;
+  document.querySelectorAll('.cat-tab').forEach(el => el.classList.remove('active'));
+  event.target.classList.add('active');
+  renderTemplates();
+}
+
+// 绘制简历缩略图
+function drawResumeThumb(canvas, template) {
+  const ctx = canvas.getContext('2d');
+  const w = canvas.width, h = canvas.height;
+  const c = template.color;
+  const a = template.accent;
+
+  // 背景
+  ctx.fillStyle = '#fff';
+  ctx.fillRect(0, 0, w, h);
+
+  // 头部色块
+  ctx.fillStyle = c;
+  ctx.fillRect(0, 0, w, 60);
+
+  // 名字占位
+  ctx.fillStyle = '#fff';
+  ctx.font = 'bold 14px sans-serif';
+  ctx.fillText('张 三', 15, 30);
+  ctx.font = '8px sans-serif';
+  ctx.fillText('求职意向：'+template.tags[0], 15, 48);
+
+  // 头像占位圆
+  ctx.fillStyle = a;
+  ctx.beginPath();
+  ctx.arc(w-30, 30, 18, 0, Math.PI*2);
+  ctx.fill();
+  ctx.fillStyle = c;
+  ctx.font = '12px sans-serif';
+  ctx.textAlign = 'center';
+  ctx.fillText('照', w-30, 34);
+  ctx.textAlign = 'left';
+
+  // 分隔线
+  const sections = ['个人信息','教育背景','工作经验','专业技能','项目经历'];
+  let y = 75;
+  sections.forEach(s => {
+    ctx.fillStyle = c;
+    ctx.fillRect(12, y, 3, 12);
+    ctx.font = 'bold 8px sans-serif';
+    ctx.fillStyle = '#333';
+    ctx.fillText(s, 20, y+10);
+    y += 16;
+    // 内容线
+    for (let i = 0; i < 3; i++) {
+      ctx.fillStyle = '#e5e7eb';
+      ctx.fillRect(20, y, w-40, 3);
+      y += 7;
+    }
+    y += 6;
+  });
+
+  // 底部色条
+  ctx.fillStyle = a;
+  ctx.fillRect(0, h-8, w, 8);
+}
+
+// 预览模板
+function previewTemplate(id) {
+  currentTemplateId = id;
+  const t = TEMPLATES.find(t => t.id === id);
+  const canvas = document.getElementById('previewCanvas');
+  drawResumeFull(canvas, t);
+  document.getElementById('previewOverlay').classList.add('show');
+}
+
+function closePreview() {
+  document.getElementById('previewOverlay').classList.remove('show');
+}
+
+// 绘制完整简历预览
+function drawResumeFull(canvas, template) {
+  const ctx = canvas.getContext('2d');
+  const w = canvas.width, h = canvas.height;
+  const c = template.color;
+  const a = template.accent;
+
+  ctx.fillStyle = '#fff';
+  ctx.fillRect(0, 0, w, h);
+
+  // 头部
+  ctx.fillStyle = c;
+  ctx.fillRect(0, 0, w, 130);
+
+  // 名字
+  ctx.fillStyle = '#fff';
+  ctx.font = 'bold 36px sans-serif';
+  ctx.fillText('张 三', 40, 60);
+  ctx.font = '16px sans-serif';
+  ctx.fillText('求职意向：' + template.tags[0] + '相关岗位', 40, 90);
+  ctx.font = '12px sans-serif';
+  ctx.fillText('📱 138****8888  |  📧 zhangsan@email.com  |  📍 北京市', 40, 115);
+
+  // 头像
+  ctx.fillStyle = a;
+  ctx.beginPath();
+  ctx.arc(w-80, 65, 42, 0, Math.PI*2);
+  ctx.fill();
+  ctx.fillStyle = c;
+  ctx.font = 'bold 24px sans-serif';
+  ctx.textAlign = 'center';
+  ctx.fillText('照片', w-80, 72);
+  ctx.textAlign = 'left';
+
+  // 内容区
+  const sections = [
+    {title:'教育背景', lines:['北京大学  |  计算机科学与技术  |  本科  |  2018-2022','GPA 3.8/4.0  |  专业排名前10%  |  校级奖学金']},
+    {title:'工作经验', lines:['XX科技有限公司  |  '+template.tags[0]+'  |  2022.07-至今','• 负责核心业务模块的开发和维护，提升系统性能30%','• 主导项目重构，减少代码冗余40%，提高开发效率','• 参与需求评审和技术方案设计，推动项目按时交付']},
+    {title:'项目经历', lines:['智能管理平台  |  核心开发者  |  2023.01-2023.06','• 使用主流技术栈搭建系统架构，支撑百万级用户','• 实现数据可视化大屏，支持实时数据监控和分析','• 编写技术文档和接口规范，提高团队协作效率']},
+    {title:'专业技能', lines:['• 精通相关专业技能，具备'+template.tags[0]+'领域深度经验','• 熟悉团队协作工具，良好的沟通和项目管理能力','• 英语CET-6，具备英文文档读写能力']},
+    {title:'自我评价', lines:['工作认真负责，具有良好的团队合作精神和沟通能力。','善于学习新技术，能够快速适应新环境和新挑战。']},
+  ];
+
+  let y = 160;
+  sections.forEach(s => {
+    // 标题
+    ctx.fillStyle = c;
+    ctx.fillRect(35, y, 5, 22);
+    ctx.font = 'bold 18px sans-serif';
+    ctx.fillStyle = '#1e293b';
+    ctx.fillText(s.title, 48, y+17);
+    ctx.fillStyle = a;
+    ctx.fillRect(35, y+28, w-70, 1);
+    y += 38;
+
+    // 内容
+    ctx.font = '13px sans-serif';
+    ctx.fillStyle = '#475569';
+    s.lines.forEach(line => {
+      ctx.fillText(line, 48, y+4);
+      y += 22;
+    });
+    y += 10;
+  });
+}
+
+// 下载模板
+function downloadTemplate(id) {
+  if (id) currentTemplateId = id;
+  if (isPaid()) {
+    doDownload();
+  } else {
+    closePreview();
+    showPayModal();
+  }
+}
+
+function doDownload() {
+  const t = TEMPLATES.find(t => t.id === currentTemplateId);
+  const canvas = document.createElement('canvas');
+  canvas.width = 630; canvas.height = 891;
+  drawResumeFull(canvas, t);
+  const link = document.createElement('a');
+  link.download = `简历模板_${t.name}.png`;
+  link.href = canvas.toDataURL('image/png');
+  link.click();
+  showToast('模板已下载！用PS或Word替换内容即可');
+}
+
+// 付费逻辑
+function isPaid() { return localStorage.getItem('resume_paid') === '1'; }
+
+function showPayModal() {
+  document.getElementById('payOverlay').classList.add('show');
+  document.getElementById('codeErr').style.display = 'none';
+  document.getElementById('unlockCode').value = '';
+}
+
+function closePayModal() { document.getElementById('payOverlay').classList.remove('show'); }
+
+function unlockDownload() {
+  const code = document.getElementById('unlockCode').value.trim().toUpperCase();
+  if (UNLOCK_CODES.includes(code)) {
+    localStorage.setItem('resume_paid', '1');
+    closePayModal();
+    doDownload();
+    showToast('解锁成功！所有模板永久免费下载');
+  } else {
+    document.getElementById('codeErr').style.display = 'block';
+  }
+}
+
+function showToast(msg) {
+  const toast = document.getElementById('toast');
+  toast.textContent = msg;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 2500);
+}
+
+// 初始化
+renderTemplates();
+</script>
+</body>
+</html>
